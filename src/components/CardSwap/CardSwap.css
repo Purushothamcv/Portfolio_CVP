@@ -25,6 +25,10 @@
   color: #fff;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
+  
+  /* Production visibility fix */
+  opacity: 1;
+  visibility: visible;
 }
 
 .card:hover {

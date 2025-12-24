@@ -2,6 +2,11 @@ import React, { Children, cloneElement, forwardRef, isValidElement, useEffect, u
 import gsap from 'gsap';
 import './CardSwap.css';
 
+// Ensure GSAP is ready in production
+if (typeof window !== 'undefined') {
+  gsap.config({ force3D: true, nullTargetWarn: false });
+}
+
 export const Card = forwardRef(({ customClass, ...rest }, ref) => (
   <div ref={ref} {...rest} className={`card ${customClass ?? ''} ${rest.className ?? ''}`.trim()} />
 ));
@@ -73,7 +78,19 @@ const CardSwap = ({
 
   useEffect(() => {
     const total = refs.length;
-    refs.forEach((r, i) => placeNow(r.current, makeSlot(i, cardDistance, verticalDistance, total), skewAmount));
+    
+    // Ensure GSAP context is ready
+    const ctx = gsap.context(() => {
+      refs.forEach((r, i) => {
+        if (r.current) {
+          placeNow(r.current, makeSlot(i, cardDistance, verticalDistance, total), skewAmount);
+          // Force visibility in production
+          gsap.set(r.current, { opacity: 1, visibility: 'visible' });
+        }
+      });
+    }, container);
+    
+    return () => ctx.revert();
 
     const swap = () => {
       if (order.current.length < 2) return;
