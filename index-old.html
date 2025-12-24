@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - AI/ML Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Portfolio</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm a <span class="gradient-text">AI/ML Developer</span></h1>
+                <p class="hero-subtitle">Building intelligent solutions with Machine Learning & Deep Learning</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    I'm a passionate AI/ML developer specializing in deep learning, time series forecasting, 
+                    and building intelligent systems. I focus on creating practical solutions that leverage 
+                    the power of artificial intelligence to solve real-world problems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- SmartAgri-AI Project -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="project-title">SmartAgri-AI – Crop Yield Forecasting</h3>
+                    <p class="project-description">
+                        A machine learning-based crop yield forecasting system focused on time series prediction. 
+                        The project uses an LSTM (Long Short-Term Memory) neural network to forecast crop yield 
+                        values for upcoming days based on historical and environmental data patterns.
+                    </p>
+                    
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Time series forecasting using LSTM</li>
+                            <li><i class="fas fa-check-circle"></i> Accurate short-term crop yield prediction</li>
+                            <li><i class="fas fa-check-circle"></i> Clean and interpretable prediction outputs</li>
+                            <li><i class="fas fa-check-circle"></i> Real-time forecasting interface</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-badge python"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge tensorflow"><i class="fas fa-brain"></i> TensorFlow</span>
+                        <span class="tech-badge keras"><i class="fas fa-robot"></i> Keras</span>
+                        <span class="tech-badge lstm"><i class="fas fa-project-diagram"></i> LSTM</span>
+                        <span class="tech-badge streamlit"><i class="fas fa-stream"></i> Streamlit</span>
+                    </div>
+                    
+                    <div class="project-buttons">
+                        <a href="https://agriculture-farm-technology.vercel.app/" class="btn btn-live" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/Purushothamcv/AgricultureFarmTechnology.git" class="btn btn-github" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LoanLens Project -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="project-title">LoanLens – AI Loan Prediction System</h3>
+                    <p class="project-description">
+                        A complete full-stack application for predicting loan approval status using advanced 
+                        machine learning algorithms. Features a modern React frontend with smooth animations 
+                        and a FastAPI backend powered by Logistic Regression.
+                    </p>
+                    
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> ML-powered loan approval predictions</li>
+                            <li><i class="fas fa-check-circle"></i> Multi-step form with real-time validation</li>
+                            <li><i class="fas fa-check-circle"></i> Beautiful UI with Framer Motion animations</li>
+                            <li><i class="fas fa-check-circle"></i> Mobile-first responsive design</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-badge react"><i class="fab fa-react"></i> React</span>
+                        <span class="tech-badge tailwind"><i class="fas fa-wind"></i> Tailwind CSS</span>
+                        <span class="tech-badge python"><i class="fab fa-python"></i> Python</span>
+                        <span class="tech-badge fastapi"><i class="fas fa-server"></i> FastAPI</span>
+                        <span class="tech-badge ml"><i class="fas fa-robot"></i> ML</span>
+                    </div>
+                    
+                    <div class="project-buttons">
+                        <a href="https://loanlens.vercel.app/" class="btn btn-live" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/Purushothamcv/loanlens.git" class="btn btn-github" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Deep Learning, LSTM, Time Series</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Programming</h3>
+                    <p>Python, TensorFlow, Keras</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Analysis</h3>
+                    <p>NumPy, Pandas, Visualization</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Deployment</h3>
+                    <p>Streamlit, Web Applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p class="contact-text">
+                    Interested in working together or have a question? Feel free to reach out!
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+/* ==============================
+   SIMPLIFIED SKILL CARD
+   ============================== */
+
+.skill-card-container {
+  position: relative;
+  width: 600px;
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(132, 0, 255, 0.3);
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.skill-card-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  color: white;
+}
+
+.skill-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(132, 0, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.skill-header-text {
+  flex: 1;
+}
+
+.skill-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, #60A5FA, #A78BFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.skill-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.skill-close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: white;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.skill-close-btn:hover {
+  background: rgba(239, 68, 68, 0.3);
+  border-color: rgba(239, 68, 68, 0.5);
+  transform: scale(1.1);
+}
+
+.skill-card-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+  width: 100%;
+  margin-top: 0;
+.skill-topics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skill-topic-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, rgba(132, 0, 255, 0.1), rgba(59, 130, 246, 0.1));
+  border: 1px solid rgba(132, 0, 255, 0.2);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.skill-topic-card:hover {
+  background: linear-gradient(135deg, rgba(132, 0, 255, 0.15), rgba(59, 130, 246, 0.15));
+  border-color: rgba(132, 0, 255, 0.4);
+  transform: translateX(8px);
+  box-shadow: 0 8px 24px rgba(132, 0, 255, 0.2);
+}
+
+.topic-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(132, 0, 255, 0.6);
+  font-family: 'Courier New', monospace;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.topic-content {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Scrollbar styling */
+.skill-card-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.skill-card-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.skill-card-body::-webkit-scrollbar-thumb {
+  background: rgba(132, 0, 255, 0.4);
+  border-radius: 4px;
+}
+
+.skill-card-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(132, 0, 255, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skill-card-content {
+    padding: 28px;
+  }
+
+  .skill-title {
+    font-size: 28px;
+  }
+
+  .skill-subtitle {
+    font-size: 14px;
+  }
+
+  .skill-topic-card {
+    padding: 16px 20px;
+    gap: 16px;
+  }
+
+  .topic-number {
+    font-size: 24px;
+  }
+
+  .topic-content {
+    font-size: 16px;
+  }
+}
+
+/* ==============================
+   OLD REFLECTIVE CARD STYLES (KEPT FOR BACKWARDS COMPATIBILITY)
+   ============================== */
+
+.reflective-card-container {
+  position: relative;
+  width: 380px;
+  height: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(96, 165, 250, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reflective-card-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(96, 165, 250, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.reflective-svg-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.reflective-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  filter: blur(var(--blur-strength, 12px)) saturate(var(--saturation, 0));
+  mix-blend-mode: screen;
+}
+
+.reflective-noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.reflective-sheen {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 60%
+  );
+  transform: rotate(45deg);
+  animation: sheenSlide 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sheenSlide {
+  0%, 100% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+.reflective-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.reflective-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--text-color, white);
+  z-index: 2;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.security-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #10B981;
+}
+
+.security-icon {
+  color: #10B981;
+}
+
+.status-icon {
+  color: #60A5FA;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 16px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.user-info {
+  width: 100%;
+}
+
+.skill-info {
+  width: 100%;
+}
+
+.skill-name {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.skill-category {
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  opacity: 0.8;
+  margin: 0 0 24px 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.skill-topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.skill-topic-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topic-bullet {
+  font-size: 20px;
+  color: rgba(96, 165, 250, 0.8);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.topic-text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+}
+
+.user-name {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, #60A5FA, #A78BFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+}
+
+.user-role {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 100, 100, 0.3);
+  border-color: rgba(255, 100, 100, 0.5);
+  transform: scale(1.1);
+}
+
+.id-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+.value {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Courier New', monospace;
+}
+
+.fingerprint-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 12px;
+}
+
+.fingerprint-icon {
+  color: #60A5FA;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .reflective-card-container {
+    width: 320px;
+    height: 200px;
+  }
+
+  .user-name {
+    font-size: 20px;
+  }
+
+  .user-role {
+    font-size: 11px;
+  }
+
+  .value {
+    font-size: 11px;
+  }
+}
