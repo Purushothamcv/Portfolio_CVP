@@ -32,20 +32,20 @@ const Education = () => {
       <div className="education-container">
         <motion.h2
           className="section-title"
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 1, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false }}
+          transition={{ duration: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           Education Journey
         </motion.h2>
 
         <motion.div
           className="education-card-swap-wrapper"
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 1, scale: 1 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: false }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: false, amount: 0.2 }}
         >
           <CardSwap
             width={550}

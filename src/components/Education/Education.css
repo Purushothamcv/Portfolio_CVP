@@ -1,21 +1,26 @@
 .education-section {
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  overflow: hidden;
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+  overflow: visible;
+  padding: 2rem 1.5rem;
 }
 
 .education-container {
+  position: relative;
   width: 100%;
   max-width: 1600px;
-  min-height: 100vh;
+  min-height: calc(100vh - 4rem);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 80px 40px;
+  opacity: 1;
+  visibility: visible;
 }
 
 .section-title {
@@ -30,16 +35,23 @@
   text-shadow: 0 0 40px rgba(96, 165, 250, 0.3);
   position: relative;
   z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /* Timeline Layout - Updated for CardSwap */
 .education-card-swap-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 500px;
   margin-top: 3rem;
   width: 100%;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 }
 
 /* Keep old timeline for backwards compatibility */
