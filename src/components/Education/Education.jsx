@@ -30,23 +30,11 @@ const Education = () => {
   return (
     <section id="education" className="education-section">
       <div className="education-container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 1, y: 0 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          viewport={{ once: false, amount: 0.3 }}
-        >
+        <h2 className="section-title">
           Education Journey
-        </motion.h2>
+        </h2>
 
-        <motion.div
-          className="education-card-swap-wrapper"
-          initial={{ opacity: 1, scale: 1 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: false, amount: 0.2 }}
-        >
+        <div className="education-card-swap-wrapper">
           <CardSwap
             width={550}
             height={400}
@@ -66,7 +54,7 @@ const Education = () => {
               </Card>
             ))}
           </CardSwap>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

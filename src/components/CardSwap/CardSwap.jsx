@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, forwardRef, isValidElement, useEffect, useMemo, useRef } from 'react';
+import React, { Children, cloneElement, forwardRef, isValidElement, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
 import gsap from 'gsap';
 import './CardSwap.css';
 
@@ -75,6 +75,32 @@ const CardSwap = ({
   const tlRef = useRef(null);
   const intervalRef = useRef();
   const container = useRef(null);
+
+  useLayoutEffect(() => {
+    if (!refs.length) return;
+    const total = refs.length;
+    
+    // Synchronously place cards before browser paint
+    refs.forEach((r, i) => {
+      if (r.current) {
+        const slot = makeSlot(i, cardDistance, verticalDistance, total);
+        gsap.set(r.current, {
+          x: slot.x,
+          y: slot.y,
+          z: slot.z,
+          xPercent: -50,
+          yPercent: -50,
+          skewY: skewAmount,
+          transformOrigin: 'center center',
+          zIndex: slot.zIndex,
+          force3D: true,
+          opacity: 1,
+          visibility: 'visible',
+          clearProps: 'none'
+        });
+      }
+    });
+  }, [refs, cardDistance, verticalDistance, skewAmount]);
 
   useEffect(() => {
     const total = refs.length;

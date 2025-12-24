@@ -2,6 +2,7 @@
   position: relative;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   min-height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,8 +88,8 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 20px;
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .skill-badge {
