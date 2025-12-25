@@ -1,11 +1,6 @@
-import React, { Children, cloneElement, forwardRef, isValidElement, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
+import React, { Children, cloneElement, forwardRef, isValidElement, useEffect, useMemo, useRef } from 'react';
 import gsap from 'gsap';
 import './CardSwap.css';
-
-// Ensure GSAP is ready in production
-if (typeof window !== 'undefined') {
-  gsap.config({ force3D: true, nullTargetWarn: false });
-}
 
 export const Card = forwardRef(({ customClass, ...rest }, ref) => (
   <div ref={ref} {...rest} className={`card ${customClass ?? ''} ${rest.className ?? ''}`.trim()} />
@@ -18,7 +13,6 @@ const makeSlot = (i, distX, distY, total) => ({
   z: -i * distX * 1.5,
   zIndex: total - i
 });
-
 const placeNow = (el, slot, skew) =>
   gsap.set(el, {
     x: slot.x,
@@ -76,47 +70,9 @@ const CardSwap = ({
   const intervalRef = useRef();
   const container = useRef(null);
 
-  useLayoutEffect(() => {
-    if (!refs.length) return;
-    const total = refs.length;
-    
-    // Synchronously place cards before browser paint
-    refs.forEach((r, i) => {
-      if (r.current) {
-        const slot = makeSlot(i, cardDistance, verticalDistance, total);
-        gsap.set(r.current, {
-          x: slot.x,
-          y: slot.y,
-          z: slot.z,
-          xPercent: -50,
-          yPercent: -50,
-          skewY: skewAmount,
-          transformOrigin: 'center center',
-          zIndex: slot.zIndex,
-          force3D: true,
-          opacity: 1,
-          visibility: 'visible',
-          clearProps: 'none'
-        });
-      }
-    });
-  }, [refs, cardDistance, verticalDistance, skewAmount]);
-
   useEffect(() => {
     const total = refs.length;
-    
-    // Ensure GSAP context is ready
-    const ctx = gsap.context(() => {
-      refs.forEach((r, i) => {
-        if (r.current) {
-          placeNow(r.current, makeSlot(i, cardDistance, verticalDistance, total), skewAmount);
-          // Force visibility in production
-          gsap.set(r.current, { opacity: 1, visibility: 'visible' });
-        }
-      });
-    }, container);
-    
-    return () => ctx.revert();
+    refs.forEach((r, i) => placeNow(r.current, makeSlot(i, cardDistance, verticalDistance, total), skewAmount));
 
     const swap = () => {
       if (order.current.length < 2) return;

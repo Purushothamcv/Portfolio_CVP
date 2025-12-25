@@ -5,11 +5,11 @@ import './Education.css';
 const Education = () => {
   const educationData = [
     {
-      id: 'be',
-      degree: 'BE - CSE',
-      institution: 'JSS SCIENCE & TECHNOLOGY UNIVERSITY',
-      score: 'CGPA: 8.42',
-      period: '2022 - 2026'
+      id: 'sslc',
+      degree: 'SSLC (10TH GRADE)',
+      institution: 'ROYALE APOLLO INTERNATIONAL SCHOOL',
+      score: 'SCORE: 96.16%',
+      period: '2020'
     },
     {
       id: 'puc',
@@ -19,11 +19,11 @@ const Education = () => {
       period: '2020 - 2022'
     },
     {
-      id: 'sslc',
-      degree: 'SSLC (10TH GRADE)',
-      institution: 'ROYALE APOLLO INTERNATIONAL SCHOOL',
-      score: 'SCORE: 96.16%',
-      period: '2020'
+      id: 'be',
+      degree: 'BE - CSE',
+      institution: 'JSS SCIENCE & TECHNOLOGY UNIVERSITY',
+      score: 'CGPA: 8.42',
+      period: '2022 - 2026'
     }
   ];
 
@@ -38,11 +38,11 @@ const Education = () => {
           <CardSwap
             width={550}
             height={400}
-            cardDistance={50}
-            verticalDistance={60}
-            delay={4000}
+            cardDistance={70}
+            verticalDistance={80}
+            delay={3500}
             pauseOnHover={true}
-            skewAmount={4}
+            skewAmount={8}
             easing="elastic"
           >
             {educationData.map((edu) => (
