@@ -22,7 +22,7 @@ const Experience = () => {
       id: 1,
       title: "Data Analyst",
       company: "Boyle Lifesciences",
-      period: "Jun 2023 - Present",
+      period: "September 2025",
       achievements: [
         { 
           icon: TrendingUp, 
@@ -146,18 +146,19 @@ const Experience = () => {
             <motion.div
               key={exp.id}
               className="experience-card cursor-target"
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false }}
+              viewport={{ once: false, amount: 0.3 }}
               transition={{ 
-                duration: 0.6, 
+                duration: 0.8, 
                 delay: 2.7 + index * 0.2,
                 type: "spring",
-                stiffness: 100
+                stiffness: 80
               }}
               whileHover={{ 
                 scale: 1.02,
-                transition: { duration: 0.2 }
+                x: 20,
+                transition: { duration: 0.3 }
               }}
             >
               {/* Card Header */}

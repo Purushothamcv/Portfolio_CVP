@@ -70,7 +70,7 @@ const Hero = () => {
 
           <p className="hero-subtitle">
             <Shuffle
-              text="AI/ML Developer | Deep Learning Specialist | Full-stack Engineer"
+              text="AI/ML Developer | Deep Learning Engineer | Full-stack Engineer"
               tag="span"
               duration={0.4}
               shuffleTimes={2}
