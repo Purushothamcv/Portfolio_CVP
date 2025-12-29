@@ -94,6 +94,7 @@
    MAIN CONTAINER
    ============================================== */
 
+/* Main Container */
 .experience-container {
   position: relative;
   z-index: 10;
@@ -101,6 +102,20 @@
   width: 100%;
   margin: 0 auto;
   padding-left: 220px; /* Space for thread */
+}
+
+@media (min-width: 1600px) {
+  .experience-container {
+    max-width: 1400px;
+    padding-left: 250px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .experience-container {
+    max-width: 1600px;
+    padding-left: 280px;
+  }
 }
 
 /* ==============================================

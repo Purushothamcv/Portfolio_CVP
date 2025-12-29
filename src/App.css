@@ -26,6 +26,8 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .App {
@@ -60,11 +62,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 60px 60px;
+  padding: 120px 80px 80px;
   flex-shrink: 0;
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+/* Large desktop optimization */
+@media (min-width: 1440px) {
+  .horizontal-scroll-container > section {
+    padding: 140px 100px 100px;
+  }
+
+  .container {
+    max-width: 1600px;
+  }
 }
 
 /* Tablet adjustments */
@@ -138,6 +151,20 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
+    padding: 0 60px;
+  }
 }
 
 .section-title {
