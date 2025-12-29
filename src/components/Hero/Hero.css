@@ -31,8 +31,8 @@
 
 .hero-image-wrapper {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   overflow: hidden;
   border: 6px solid transparent;
@@ -47,8 +47,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   border-radius: 50%;
   background: rgba(15, 23, 42, 0.9);
+  transform: scale(0.8);
 }
 
 @keyframes profileGlow {
@@ -125,6 +127,36 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .hero-image-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    gap: 2.5rem;
+  }
+
+  .hero-image-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-content {
     gap: 2rem;
@@ -132,30 +164,33 @@
   }
 
   .hero-image-wrapper {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     padding: 4px;
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.25rem;
+    line-height: 1.3;
   }
 
   .hero-subtitle {
     font-size: 1rem;
     padding: 0 1rem;
+    line-height: 1.6;
   }
 
   .hero-buttons {
     flex-direction: column;
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
     gap: 1rem;
   }
 
   .hero-buttons .btn {
     width: 100%;
     text-align: center;
+    padding: 14px 30px;
   }
 
   .scroll-hint-horizontal {
@@ -164,16 +199,45 @@
 }
 
 @media (max-width: 480px) {
+  .hero-content {
+    gap: 1.5rem;
+  }
+
   .hero-image-wrapper {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
   }
 
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
   }
 
   .hero-subtitle {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+
+  .hero-buttons {
+    max-width: 280px;
+  }
+
+  .hero-buttons .btn {
+    padding: 12px 24px;
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-image-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
   }
 }

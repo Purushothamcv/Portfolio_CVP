@@ -67,6 +67,18 @@ body {
   overflow-x: hidden;
 }
 
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .horizontal-scroll-container > section {
+    padding: 90px 40px 50px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
 /* Responsive - Switch to vertical scroll on mobile */
 @media (max-width: 768px) {
   html {
@@ -99,6 +111,26 @@ body {
     padding: 80px 20px 60px;
     overflow: visible;
   }
+
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .horizontal-scroll-container > section {
+    padding: 70px 15px 50px;
+    min-height: auto;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
 }
 
 .container {
@@ -129,6 +161,24 @@ body {
   border: none;
   cursor: pointer;
   display: inline-block;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 11px 24px;
+    font-size: 0.9rem;
+  }
 }
 
 .btn-primary {
