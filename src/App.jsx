@@ -24,30 +24,59 @@ function App() {
       if (window.innerWidth > 768) {
         e.preventDefault();
         
-        // Smooth horizontal scrolling with acceleration
+        // Enhanced smooth horizontal scrolling
         const scrollAmount = e.deltaY;
-        const scrollSpeed = Math.abs(scrollAmount) > 100 ? 2 : 1.5;
+        const scrollSpeed = 2; // Consistent faster speed
         
         container.scrollLeft += scrollAmount * scrollSpeed;
+      }
+    };
+
+    // Touch/Swipe support for better mobile-like interaction
+    let touchStartX = 0;
+    let touchStartY = 0;
+    
+    const handleTouchStart = (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    };
+    
+    const handleTouchMove = (e) => {
+      if (!touchStartX || !touchStartY) return;
+      
+      const touchEndX = e.touches[0].clientX;
+      const touchEndY = e.touches[0].clientY;
+      
+      const deltaX = touchStartX - touchEndX;
+      const deltaY = touchStartY - touchEndY;
+      
+      // If horizontal swipe is dominant
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        e.preventDefault();
+        container.scrollLeft += deltaX * 2;
       }
     };
 
     // Add keyboard navigation for better UX
     const handleKeyDown = (e) => {
       if (window.innerWidth > 768) {
-        const scrollAmount = window.innerWidth * 0.8; // Scroll 80% of viewport width
+        const scrollAmount = window.innerWidth; // Scroll full viewport width
         
         switch(e.key) {
           case 'ArrowRight':
+            e.preventDefault();
             container.scrollLeft += scrollAmount;
             break;
           case 'ArrowLeft':
+            e.preventDefault();
             container.scrollLeft -= scrollAmount;
             break;
           case 'Home':
+            e.preventDefault();
             container.scrollLeft = 0;
             break;
           case 'End':
+            e.preventDefault();
             container.scrollLeft = container.scrollWidth;
             break;
         }
@@ -55,10 +84,14 @@ function App() {
     };
 
     container.addEventListener('wheel', handleWheel, { passive: false });
+    container.addEventListener('touchstart', handleTouchStart);
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
     window.addEventListener('keydown', handleKeyDown);
     
     return () => {
       container.removeEventListener('wheel', handleWheel);
+      container.removeEventListener('touchstart', handleTouchStart);
+      container.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);

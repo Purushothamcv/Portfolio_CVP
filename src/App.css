@@ -42,19 +42,32 @@ body {
   flex-direction: row;
   width: 800vw;
   height: 100vh;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  /* Improve scroll performance */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99, 102, 241, 0.5) rgba(15, 23, 42, 0.3);
+  -ms-overflow-style: auto;
   will-change: scroll-position;
   -webkit-overflow-scrolling: touch;
 }
 
 .horizontal-scroll-container::-webkit-scrollbar {
-  display: none;
+  height: 8px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.5);
+  border-radius: 4px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.7);
 }
 
 .horizontal-scroll-container > section {
