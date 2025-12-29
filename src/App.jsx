@@ -19,9 +19,12 @@ function App() {
     const container = scrollContainerRef.current;
     if (!container) return;
 
+    // Only apply horizontal scroll on desktop
     const handleWheel = (e) => {
-      e.preventDefault();
-      container.scrollLeft += e.deltaY;
+      if (window.innerWidth > 768) {
+        e.preventDefault();
+        container.scrollLeft += e.deltaY;
+      }
     };
 
     container.addEventListener('wheel', handleWheel, { passive: false });

@@ -152,7 +152,7 @@
 
 .experience-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
   width: 100%;
 }
@@ -396,6 +396,7 @@
 @media (max-width: 768px) {
   .experience {
     padding: 40px 20px;
+    min-height: auto;
   }
   
   .experience-container {
@@ -412,15 +413,21 @@
   }
   
   .experience-header {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+  }
+
+  .header-badge {
+    padding: 12px 24px;
+    flex-direction: column;
+    gap: 8px;
   }
   
   .section-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   
   .section-subtitle {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
   
   .experience-cards-grid {
@@ -429,37 +436,83 @@
   }
   
   .experience-card {
-    padding: 28px;
+    padding: 24px;
   }
   
   .card-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
+  }
+
+  .icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .header-content {
+    width: 100%;
+  }
+
+  .company-name {
+    font-size: 1rem;
+    padding: 8px 16px;
   }
   
   .experience-period {
     align-self: flex-start;
+    font-size: 0.85rem;
   }
   
   .role-title {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+  }
+
+  .achievement-item {
+    gap: 12px;
+  }
+
+  .achievement-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .achievement-text {
+    font-size: 0.95rem;
+  }
+
+  .tech-tags {
+    gap: 8px;
+  }
+
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
 }
 
-@media (max-width: 768px) {
-  .experience-header {
-    flex-direction: column;
+@media (max-width: 480px) {
+  .experience {
+    padding: 30px 15px;
   }
 
-  .experience-period {
-    align-self: flex-start;
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
   }
 
   .experience-card {
-    padding: 1.5rem;
+    padding: 20px;
   }
 
-  .experience-title {
-    font-size: 1.2rem;
+  .role-title {
+    font-size: 1.1rem;
+  }
+
+  .company-name {
+    font-size: 0.9rem;
   }
 }

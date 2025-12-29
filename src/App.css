@@ -67,6 +67,40 @@ body {
   overflow-x: hidden;
 }
 
+/* Responsive - Switch to vertical scroll on mobile */
+@media (max-width: 768px) {
+  html {
+    overflow: auto;
+  }
+
+  body {
+    overflow: auto;
+  }
+
+  .App {
+    height: auto;
+    overflow: visible;
+  }
+
+  .horizontal-scroll-container {
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+    scroll-snap-type: y proximity;
+  }
+
+  .horizontal-scroll-container > section {
+    min-width: 100vw;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    padding: 80px 20px 60px;
+    overflow: visible;
+  }
+}
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
