@@ -20,11 +20,6 @@ const Resume = () => {
     setShowViewer(true);
   };
 
-  const handleFolderClick = () => {
-    // Open resume viewer when folder is clicked
-    setShowViewer(true);
-  };
-
   const handlePaperClick = (index) => {
     if (index === 0) {
       // Download resume
@@ -76,7 +71,7 @@ const Resume = () => {
           viewport={{ once: false }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Click the folder to view resume
+          Click the folder to view options
         </motion.p>
 
         <motion.div
@@ -86,15 +81,13 @@ const Resume = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: false }}
         >
-          <div onClick={handleFolderClick}>
-            <Folder
-              color="#8400ff"
-              size={2.5}
-              items={folderItems}
-              onPaperClick={handlePaperClick}
-              className="resume-folder"
-            />
-          </div>
+          <Folder
+            color="#8400ff"
+            size={2.5}
+            items={folderItems}
+            onPaperClick={handlePaperClick}
+            className="resume-folder"
+          />
         </motion.div>
 
         <motion.div
