@@ -112,6 +112,8 @@
   color: var(--text-secondary);
   font-size: 0.9rem;
   animation: bounceRight 2s infinite;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .scroll-hint-horizontal i {
@@ -124,6 +126,15 @@
   }
   50% {
     transform: translateX(10px);
+  }
+}
+
+/* Show scroll hint on desktop only */
+@media (max-width: 1024px) {
+  .scroll-hint-horizontal {
+    bottom: 30px;
+    right: 40px;
+    font-size: 0.85rem;
   }
 }
 

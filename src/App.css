@@ -48,6 +48,9 @@ body {
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  /* Improve scroll performance */
+  will-change: scroll-position;
+  -webkit-overflow-scrolling: touch;
 }
 
 .horizontal-scroll-container::-webkit-scrollbar {
@@ -59,6 +62,7 @@ body {
   width: 100vw;
   height: 100vh;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,6 +71,8 @@ body {
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
+  /* Smooth section transitions */
+  transition: opacity 0.3s ease;
 }
 
 /* Large desktop optimization */

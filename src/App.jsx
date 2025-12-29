@@ -19,16 +19,48 @@ function App() {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    // Only apply horizontal scroll on desktop
+    // Horizontal scroll on desktop - converts vertical scroll to horizontal
     const handleWheel = (e) => {
       if (window.innerWidth > 768) {
         e.preventDefault();
-        container.scrollLeft += e.deltaY;
+        
+        // Smooth horizontal scrolling with acceleration
+        const scrollAmount = e.deltaY;
+        const scrollSpeed = Math.abs(scrollAmount) > 100 ? 2 : 1.5;
+        
+        container.scrollLeft += scrollAmount * scrollSpeed;
+      }
+    };
+
+    // Add keyboard navigation for better UX
+    const handleKeyDown = (e) => {
+      if (window.innerWidth > 768) {
+        const scrollAmount = window.innerWidth * 0.8; // Scroll 80% of viewport width
+        
+        switch(e.key) {
+          case 'ArrowRight':
+            container.scrollLeft += scrollAmount;
+            break;
+          case 'ArrowLeft':
+            container.scrollLeft -= scrollAmount;
+            break;
+          case 'Home':
+            container.scrollLeft = 0;
+            break;
+          case 'End':
+            container.scrollLeft = container.scrollWidth;
+            break;
+        }
       }
     };
 
     container.addEventListener('wheel', handleWheel, { passive: false });
-    return () => container.removeEventListener('wheel', handleWheel);
+    window.addEventListener('keydown', handleKeyDown);
+    
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   return (
