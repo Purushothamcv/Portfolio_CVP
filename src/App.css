@@ -84,8 +84,6 @@ body {
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
-  /* Smooth section transitions */
-  transition: opacity 0.3s ease;
 }
 
 /* Large desktop optimization */
