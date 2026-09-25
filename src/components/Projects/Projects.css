@@ -269,6 +269,55 @@
   font-weight: 600;
 }
 
+@media (max-width: 1024px) {
+  .projects {
+    padding: 2rem 1.25rem;
+  }
+
+  .projects-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .gallery-wrapper {
+    height: min(62vw, 520px);
+    min-height: 360px;
+  }
+
+  .projects-description {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects {
+    padding: 1.5rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .projects-subtitle {
+    margin-bottom: 2rem;
+  }
+
+  .gallery-wrapper {
+    height: 340px;
+    min-height: 0;
+  }
+
+  .description-content {
+    padding: 1.25rem;
+  }
+
+  .tech-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Project Info Overlay */
 .project-info-overlay {
   position: fixed;

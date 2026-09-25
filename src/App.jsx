@@ -22,9 +22,9 @@ function App() {
     let currentMouseX = window.innerWidth / 2;
     let animationId = null;
 
-    // Horizontal scroll on desktop - converts vertical scroll to horizontal
+    // Keep the cinematic horizontal layout on wide screens only.
     const handleWheel = (e) => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1024) {
         e.preventDefault();
         const scrollSpeed = 2;
         container.scrollLeft += e.deltaY * scrollSpeed;
@@ -33,7 +33,7 @@ function App() {
 
     // Track mouse position
     const handleMouseMove = (e) => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1024) {
         currentMouseX = e.clientX;
       }
     };
@@ -43,7 +43,7 @@ function App() {
     
     // Continuous scroll animation based on mouse position
     const animateScroll = () => {
-      if (window.innerWidth > 768 && container) {
+      if (window.innerWidth > 1024 && container) {
         const windowWidth = window.innerWidth;
         const edgeZone = windowWidth * 0.3; // 30% edge zones
         const now = Date.now();
@@ -110,7 +110,7 @@ function App() {
 
     // Keyboard navigation
     const handleKeyDown = (e) => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1024) {
         const scrollAmount = window.innerWidth;
         
         switch(e.key) {
