@@ -4,7 +4,8 @@ import './Education.css';
 
 const Education = () => {
   const educationData = [
-    { id: 'be', degree: 'B.E. IN COMPUTER SCIENCE AND ENGINEERING', institution: 'SHRI JAYACHAMARAJENDRA COLLEGE OF ENGINEERING, MYSORE', score: 'CGPA: 8.58', period: '2022 – 2026' }
+    { id: 'be', degree: 'B.E. IN COMPUTER SCIENCE AND ENGINEERING', institution: 'SHRI JAYACHAMARAJENDRA COLLEGE OF ENGINEERING, MYSORE', score: 'CGPA: 8.47', period: '2022 – 2026' },
+    { id: 'pu', degree: 'PRE-UNIVERSITY EDUCATION', institution: 'MASTERS PU COLLEGE', score: 'PERCENTAGE: 94.66% · KCET RANK: 3271', period: '2020 – 2022' }
   ];
 
   return (
