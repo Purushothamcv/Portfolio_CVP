@@ -103,7 +103,7 @@ const Resume = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <i className="fas fa-graduation-cap"></i>
-            <span>B.E. in Computer Science</span>
+            <span>Data Annotation Specialist</span>
           </motion.div>
           <motion.div
             className="highlight-item"
@@ -111,7 +111,7 @@ const Resume = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <i className="fas fa-brain"></i>
-            <span>AI/ML Specialist</span>
+            <span>LLM Data Evaluation</span>
           </motion.div>
           <motion.div
             className="highlight-item"
@@ -119,7 +119,7 @@ const Resume = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <i className="fas fa-code"></i>
-            <span>Full Stack Developer</span>
+            <span>Python &amp; SQL</span>
           </motion.div>
           <motion.div
             className="highlight-item"
@@ -127,7 +127,7 @@ const Resume = () => {
             transition={{ type: "spring", stiffness: 300 }}
           >
             <i className="fas fa-database"></i>
-            <span>Data Engineer</span>
+            <span>ML Data Quality</span>
           </motion.div>
         </motion.div>
       </div>

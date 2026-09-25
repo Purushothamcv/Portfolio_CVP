@@ -265,6 +265,7 @@
 .header-content {
   flex: 1;
   min-width: 200px;
+  overflow-wrap: anywhere;
 }
 
 .role-title {

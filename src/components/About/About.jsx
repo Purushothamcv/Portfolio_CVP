@@ -62,17 +62,14 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="about-paragraph">
-              I'm a passionate <span className="highlight-text">AI/ML Developer</span> and{' '}
-              <span className="highlight-text">Full-Stack Engineer</span> specializing in deep learning,
-              time series forecasting, and intelligent system design. My focus is on building
-              production-ready solutions that bridge the gap between cutting-edge research
-              and real-world impact.
+              I'm an <span className="highlight-text">AI/ML professional</span> focused on data annotation,
+              computer vision, and LLM/ML data workflows. I work with Python and software
+              development to help build accurate, useful, and production-ready AI systems.
             </p>
             <p className="about-paragraph">
-              From data preprocessing to model deployment, I craft end-to-end pipelines
-              that turn complex problems into scalable, maintainable applications. Currently
-              learning about <span className="highlight-text">Agentic AI</span> and{' '}
-              <span className="highlight-text">n8n automations</span> to build smarter workflows.
+              My experience spans annotating and preparing text, code, image, and video data for
+              AI training, including computer vision and LLM fine-tuning workflows. I bring a
+              detail-oriented approach to software development and machine learning data.
             </p>
           </motion.div>
 
