@@ -4,11 +4,13 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      setMenuOpen(false);
     }
   };
 
@@ -33,7 +35,17 @@ const Navbar = () => {
       <div className="nav-brand">
         <h2>Purushotham CV</h2>
       </div>
-      <ul className="nav-menu">{navItems.map((item) => (
+      <button
+        className="nav-toggle"
+        type="button"
+        aria-expanded={menuOpen}
+        aria-controls="primary-navigation"
+        aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        onClick={() => setMenuOpen((open) => !open)}
+      >
+        <span aria-hidden="true">{menuOpen ? '×' : '☰'}</span>
+      </button>
+      <ul id="primary-navigation" className={`nav-menu ${menuOpen ? 'is-open' : ''}`}>{navItems.map((item) => (
             <li key={item.id}>
               <button
                 className={`nav-link cursor-target ${activeSection === item.id ? 'active' : ''}`}
